@@ -12,7 +12,12 @@ class Vehicle{
         int millage;
 
     public:
-    Vehicle(string m, int p, int e, int mil) : model(m), price(p), engine(e), millage(mil) {}
+    Vehicle(string type, int price, string color){
+            this->model = model;
+            this->price = price;
+            this->engine = engine;
+            this->millage = millage;
+        }
         string get_model(){
             return model;
         }
@@ -35,7 +40,10 @@ class Customer{
         string name;
         string email;
     public:
-        Customer(string n, string e) : name(n), email(e) {}
+        Customer(string type, int price, string color){
+            this->name = name;
+            this->email = email;
+        }
         string get_name(){
             return name;
         }
