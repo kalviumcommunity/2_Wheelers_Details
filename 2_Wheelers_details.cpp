@@ -9,14 +9,14 @@ class Vehicle{
         string model;
         int price;
         int engine;
-        int millage;
+        int milage;
 
     public:
-    Vehicle(string model, int price, int engine, int millage){
+    Vehicle(string model, int price, int engine, int milage){
             this -> model = model;
             this -> price = price;
             this -> engine = engine;
-            this -> millage = millage;
+            this -> milage = milage;
         }
         string get_model(){
             return model;
@@ -26,8 +26,8 @@ class Vehicle{
             return price;
         }
         
-        int get_millage(){
-            return millage;
+        int get_milage(){
+            return milage;
         }
         
         int get_engine(){
@@ -53,16 +53,31 @@ class Customer{
 };
 
 int main(){
-    Customer c("admin", "admin@gmail.com");
-    Vehicle v("bajaj ns200",1500000,200,45);
 
-    cout << "Customer Name: " << c.get_name() << endl;
-    cout << "Customer Email: " << c.get_email() << endl;
-    cout << "-------------------------------------------" << endl;
-    cout << "Vehicle Model: " << v.get_model() << endl;
-    cout << "Vehicle Price: " << v.get_price() << endl;
-    cout << "Vehicle Engine" << v.get_engine()<<endl;
-    cout << "Vehicle Millage: " << v.get_millage() << endl;
-    return 0;
+    Vehicle vehicles[3] = {
+        Vehicle("bajaj ns200",150000,200,45);
+        Vehicle("Apache rtr160", 100000, 160 , 40),
+        Vehicle("bajaj rs160", 170000, 160 , 45),
+        Vehicle("hunter 350", 200000, 350 , 30)
+    };  
+
+    for (int i = 0; i < 3; i++) {
+        cout << "Model: " << vehicles[i].get_model() << endl;
+        cout << "Price: " << vehicles[i].get_price() << endl;
+        cout << "milage: " << vehicles[i].get_milage() << endl;
+        cout << "engine: " << vehicles[i].get_engine() << endl;
+        cout << endl;
+    }
+    
+    Customer customers[2] = {
+        Customer("John Doe", "johndoe@example.com"),
+        Customer("Jane Smith", "janesmith@example.com")
+    };
+
+    for (int i = 0; i < 2; i++) {
+        cout << "Name: " << customers[i].get_name() << endl;
+        cout << "Email: " << customers[i].get_email() << endl;
+        cout << endl;
+    }
 }
 
