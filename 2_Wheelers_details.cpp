@@ -10,6 +10,7 @@ class Vehicle{
         int price;
         int engine;
         int milage;
+        static int count;
 
     public:
         void set_Vehicle(string model, int price, int engine, int milage){
@@ -17,6 +18,7 @@ class Vehicle{
             this -> price = price;
             this -> engine = engine;
             this -> milage = milage;
+            count++;
         }
         void get_model(){
             cout<< model << endl;
@@ -32,6 +34,9 @@ class Vehicle{
         
         void get_engine(){
             cout<< engine << endl;
+        };
+        void get_count(){
+            cout<< count << endl;
         };
 };
 
@@ -51,6 +56,8 @@ class Customer{
             cout<< email << endl;
         };
 };
+
+int Vehicle::count=0;
 
 int main(){
 
@@ -79,17 +86,34 @@ int main(){
     //     cout << "Email: " << customers[i].get_email() << endl;
     //     cout << endl;
     // };
+
+    
     Vehicle* vehicles1 = new Vehicle;
     vehicles1->set_Vehicle("bajaj ns200",150000,200,45);
+        vehicles1->get_price();
+        vehicles1->get_model();
+        vehicles1->get_milage();
+        vehicles1->get_engine();
+        vehicles1->get_count();
+
+    Vehicle* vehicles2 = new Vehicle;
+    vehicles2->set_Vehicle("bajaj ns125",120000,125,55);
+        vehicles2->get_price();
+        vehicles2->get_model();
+        vehicles2->get_milage();
+        vehicles2->get_engine();
+        vehicles2->get_count();
+
+    Vehicle* vehicles3 = new Vehicle;
+    vehicles3->set_Vehicle("bajaj ns160",135000,160,40);
+        vehicles3->get_price();
+        vehicles3->get_model();
+        vehicles3->get_milage();
+        vehicles3->get_engine();
+        vehicles3->get_count();
 
     Customer* customers1 = new Customer;
     customers1->set_Customer("John Doe", "johndoe@example.com");
-    
-    vehicles1->get_price();
-    vehicles1->get_model();
-    vehicles1->get_milage();
-    vehicles1->get_engine();
-
     customers1->get_name();
     customers1->get_email();
     
