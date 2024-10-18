@@ -35,7 +35,7 @@ class Vehicle{
         void get_engine(){
             cout<< engine << endl;
         };
-        void get_count(){
+        static int get_count(){
             cout<< count << endl;
         };
 };
