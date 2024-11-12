@@ -10,6 +10,7 @@ class Vehicle{
         int price;
         int engine;
         int milage;
+        int monthlyExpense;
         static int count;
 
     public:
@@ -45,8 +46,13 @@ class Vehicle{
         void get_engine(){
             cout<< engine << endl;
         };
+        void get_monthly_expense_with_daily_km(int km){
+            monthlyExpense=((km*30)/milage)*104;
+            cout<<monthlyExpense<<endl;
+        };
         void get_count(){
             cout<< count << endl;
+            cout<<"-----------------------------"<<endl;
         };
 };
 
@@ -117,6 +123,7 @@ int main(){
         vehicles1->get_model();
         vehicles1->get_milage();
         vehicles1->get_engine();
+        vehicles1->get_monthly_expense_with_daily_km(34);
         vehicles1->get_count();
 
     Vehicle* vehicles2 = new Vehicle;
@@ -131,6 +138,7 @@ int main(){
         vehicles2->get_model();
         vehicles2->get_milage();
         vehicles2->get_engine();
+        vehicles2->get_monthly_expense_with_daily_km(34);
         vehicles2->get_count();
 
     // Vehicle* vehicles3 = new Vehicle;
