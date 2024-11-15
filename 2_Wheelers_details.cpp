@@ -22,8 +22,8 @@ private:
     string model;
     int price;
     int engine;
-    int milage;
-    int monthlyExpense;
+    float milage;
+    float monthlyExpense;
     static int count;
 
 public:
@@ -71,13 +71,25 @@ public:
     void display()
     {
         show(model, price, milage, engine);
-        cout<< count << endl;
     }
 
     void get_monthly_expense_with_daily_km(int km)
     {
         monthlyExpense = ((km * 30) / milage) * 104;
         cout << "Monthly Expense = " << monthlyExpense << endl;
+    };
+    void get_monthly_expense_with_daily_km(int km,int days)
+    {
+        monthlyExpense = ((km * days) / milage) * 104;
+        cout << "Monthly Expense = " << monthlyExpense << endl;
+    };
+    void get_monthly_expense_with_daily_km(int km,int days,float price)
+    {
+        monthlyExpense = ((km * days) / milage) * price;
+        cout << "Monthly Expense = " << monthlyExpense << endl;
+    };
+    void get_count(){
+        cout<< count << endl;
     };
 };
 
@@ -87,12 +99,12 @@ private:
     string model;
     int price;
     int engine;
-    int milage;
-    int monthlyExpense;
+    float milage;
+    float monthlyExpense;
     static int count;
 
 public:
-    Scooty(string module, int price, int engine, int milage)
+    Scooty(string model, int price, int engine, int milage)
     {
         this->model = model;
         this->price = price;
@@ -108,13 +120,25 @@ public:
     void display()
     {
         show(model, price, milage, engine);
-        cout<< count << endl;
     }
 
     void get_monthly_expense_with_daily_km(int km)
     {
         monthlyExpense = ((km * 30) / milage) * 104;
         cout << "Monthly Expense = " << monthlyExpense << endl;
+    };
+    void get_monthly_expense_with_daily_km(int km,int days)
+    {
+        monthlyExpense = ((km * days) / milage) * 104;
+        cout << "Monthly Expense = " << monthlyExpense << endl;
+    };
+    void get_monthly_expense_with_daily_km(int km,int days,float price)
+    {
+        monthlyExpense = ((km * days) / milage) * price;
+        cout << "Monthly Expense = " << monthlyExpense << endl;
+    };
+    void get_count(){
+        cout<< count << endl;
     };
 };
 
@@ -185,6 +209,9 @@ int main()
 
     Bikes1->display();
     Bikes1->get_monthly_expense_with_daily_km(34);
+    Bikes1->get_monthly_expense_with_daily_km(34,25);
+    Bikes1->get_monthly_expense_with_daily_km(34,25,100);
+    Bikes1->get_count();
 
     Scooty *Scooty1 = new Scooty("Ntorq 125", 110000, 125, 35);
     // Scooty1->set_model("bajaj ns125");
@@ -195,14 +222,18 @@ int main()
 
     Scooty1->display();
     Scooty1->get_monthly_expense_with_daily_km(34);
+    Scooty1->get_monthly_expense_with_daily_km(34,25);
+    Scooty1->get_monthly_expense_with_daily_km(34,25,100);
+    Scooty1->get_count();
+    
 
     // Bike* Bikes3 = new Bike;
     // Bikes3->set_Bike("bajaj ns160",135000,160,40);
-    //     Bikes3->get_price();
-    //     Bikes3->get_model();
-    //     Bikes3->get_milage();
-    //     Bikes3->get_engine();
-    //     Bikes3->get_count();
+    // Bikes3->get_price();
+    // Bikes3->get_model();
+    // Bikes3->get_milage();
+    // Bikes3->get_engine();
+    // Bikes3->get_count();
 
     Customer *customers1 = new Customer("John Doe", "johndoe@example.com");
 
